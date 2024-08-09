@@ -1,0 +1,17 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+<h2>Following</h2>
+
+{% for post in page_posts %}
+<div class="card-body my-card">
+    {{ post.post }}
+    <p>Posted on: {{ post.time_date }}</p>
+    <p>Posted by: {{ post.user }}</p>
+</div>
+{% empty %}
+<p>No posts found.</p>
+{% endfor %}
+
+{% endblock %}

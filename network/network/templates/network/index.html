@@ -1,0 +1,22 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+<h2>All Posts</h2>
+<div class="card-body my-card">
+    <h3>New Post</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <textarea id="new-content" name="new-content" placeholder="What are you thinking about?"></textarea>
+        <input type="hidden" id="user-id" value="{{ USER_ID }}">
+        <div class="mt-2 d-flex justify-content-start">
+            <button type="submit" id="new-post-button">Post</button>
+        </div>
+    </form>
+</div>
+
+<div id="post-container">
+
+</div>
+
+{% endblock %}
